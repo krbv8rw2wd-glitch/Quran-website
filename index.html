@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>القرآن الكريم - قراءة واستماع لجميع السور</title>
+
+    <meta name="description"
+          content="القرآن الكريم كاملاً: اقرأ جميع السور الـ114 بالرسم العثماني مع الترجمة الإنجليزية، استمع للتلاوة بصوت الشيخ مشاري العفاسي، ابحث في الآيات، واحفظ ما تريد الرجوع إليه لاحقاً.">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="theme-color" content="#234d3b">
+
+    <link rel="canonical" href="https://YOUR-DOMAIN.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="القرآن الكريم">
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:title" content="القرآن الكريم - قراءة واستماع">
+    <meta property="og:description"
+          content="اقرأ القرآن الكريم كاملاً واستمع للتلاوات وابحث في الآيات.">
+    <meta property="og:url" content="https://YOUR-DOMAIN.com/">
+    <meta property="og:image" content="https://YOUR-DOMAIN.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="القرآن الكريم - قراءة واستماع">
+    <meta name="twitter:description" content="اقرأ القرآن الكريم كاملاً واستمع للتلاوات.">
+    <meta name="twitter:image" content="https://YOUR-DOMAIN.com/og-image.jpg">
+
+    <!-- Icons (add these files to your site root) -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "القرآن الكريم",
+      "alternateName": "Quran Kareem",
+      "url": "https://YOUR-DOMAIN.com/",
+      "inLanguage": "ar",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://YOUR-DOMAIN.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <header>
+
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                القرآن الكريم
+            </a>
+
+            <nav id="main-nav">
+
+                <a href="index.html">الرئيسية</a>
+
+                <a href="index.html#surahs">السور</a>
+
+                <a href="index.html#search">🔎 البحث</a>
+
+                <a href="bookmarks.html">🔖 المحفوظات</a>
+
+                <a href="index.html#about">حول الموقع</a>
+
+            </nav>
+
+            <div class="header-actions">
+
+                <button
+                    id="theme-toggle"
+                    onclick="toggleTheme()"
+                    aria-label="تغيير المظهر"
+                >
+                    🌙
+                </button>
+
+                <button
+                    id="menu-button"
+                    onclick="toggleMenu()"
+                    aria-label="فتح القائمة"
+                >
+                    ☰
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+         ========================= -->
+
+    <main>
+
+        <!-- =========================
+             HERO
+             ========================= -->
+
+        <section class="hero">
+
+            <h1 class="hero-title">
+                القرآن الكريم
+            </h1>
+
+            <p class="hero-basmala">
+                بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+            </p>
+
+            <p class="hero-subtitle">
+                اقرأ القرآن الكريم واستمع إلى تلاواته
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="#surahs" class="start-reading">
+                    ابدأ القراءة
+                </a>
+
+                <button
+                    id="continue-reading"
+                    class="continue-reading-btn"
+                    onclick="continueReading()"
+                    style="display: none;"
+                >
+                    📖 متابعة القراءة
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             INTRO CONTENT (for SEO)
+             ========================= -->
+
+        <section id="intro" class="intro">
+
+            <h2>عن القرآن الكريم</h2>
+
+            <p>
+                القرآن الكريم هو كتاب الله المنزَّل على نبيه محمد ﷺ،
+                وهو معجزة خالدة محفوظة من التحريف، يتكوّن من 114 سورة
+                موزّعة على 30 جزءاً. يقدّم هذا الموقع إمكانية قراءة
+                القرآن كاملاً بالرسم العثماني، مع عرض الترجمة
+                الإنجليزية لكل آية، والاستماع إلى التلاوة آية بآية
+                بصوت الشيخ مشاري العفاسي.
+            </p>
+
+            <p>
+                يمكنك التنقّل بين السور بحرية، والبحث في كلمات القرآن
+                بالتشكيل أو بدونه، وحفظ الآيات المفضّلة لديك للرجوع
+                إليها في أي وقت من صفحة المحفوظات، مع متابعة آخر موضع
+                قراءة توقفت عنده تلقائياً. الموقع متوافق مع جميع
+                الأجهزة ويعمل بالوضعين الفاتح والداكن.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             SEARCH
+             ========================= -->
+
+        <section id="search">
+
+            <h2>
+                البحث في القرآن الكريم
+            </h2>
+
+            <div class="search-box">
+
+                <div class="search-input-wrapper">
+
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="ابحث في القرآن..."
+                        autocomplete="off"
+                        aria-label="البحث في القرآن"
+                    >
+
+                    <button
+                        id="clear-search"
+                        type="button"
+                        onclick="clearSearch()"
+                        aria-label="مسح البحث"
+                    >
+                        ✕
+                    </button>
+
+                </div>
+
+                <button
+                    class="search-button"
+                    type="button"
+                    onclick="searchQuran()"
+                >
+                    🔎 بحث
+                </button>
+
+            </div>
+
+            <div id="search-results" aria-live="polite"></div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SURAHS
+             ========================= -->
+
+        <section id="surahs">
+
+            <h2>
+                سور القرآن الكريم
+            </h2>
+
+            <div id="surah-list"></div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ABOUT
+             ========================= -->
+
+        <section id="about">
+
+            <h2>
+                حول الموقع
+            </h2>
+
+            <p>
+                هذا الموقع مُخصَّص لخدمة كتاب الله تعالى، ويهدف إلى
+                تسهيل قراءته والاستماع إليه وتدبّر آياته على جميع
+                الأجهزة. يعتمد الموقع على واجهة برمجة تطبيقات
+                alquran.cloud للبيانات النصية والصوتية، ولا يجمع
+                أي بيانات شخصية عن المستخدمين؛ إذ تُحفظ تفضيلاتك
+                (الآيات المحفوظة، الوضع الداكن، آخر موضع قراءة)
+                محلياً في متصفحك فقط.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+        <p>
+            القرآن الكريم
+        </p>
+
+    </footer>
+
+
+    <!-- ==============================
+         MINI AUDIO PLAYER
+         ============================== -->
+
+    <div id="audio-player" class="audio-player">
+
+        <div class="audio-info">
+
+            <div id="audio-title">
+                لم يتم تشغيل أي آية
+            </div>
+
+            <div id="audio-status">
+                القرآن الكريم
+            </div>
+
+        </div>
+
+        <div class="audio-controls">
+
+            <button
+                id="audio-prev"
+                onclick="playPreviousFromPlayer()"
+                aria-label="الآية السابقة"
+            >
+                ⏮️
+            </button>
+
+            <button
+                id="audio-main-button"
+                onclick="toggleMainAudio()"
+                aria-label="تشغيل وإيقاف"
+            >
+                ▶️
+            </button>
+
+            <button
+                id="audio-next"
+                onclick="playNextFromPlayer()"
+                aria-label="الآية التالية"
+            >
+                ⏭️
+            </button>
+
+        </div>
+
+        <div class="audio-progress-container">
+
+            <span id="audio-current-time">0:00</span>
+
+            <input
+                type="range"
+                id="audio-progress"
+                min="0"
+                max="100"
+                value="0"
+            >
+
+            <span id="audio-duration">0:00</span>
+
+        </div>
+
+        <div class="audio-volume-container">
+
+            <span>🔊</span>
+
+            <input
+                type="range"
+                id="audio-volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+                aria-label="مستوى الصوت"
+            >
+
+        </div>
+
+        <button
+            id="audio-close"
+            onclick="closeAudioPlayer()"
+            aria-label="إغلاق المشغل"
+        >
+            ✕
+        </button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>قراءة السورة - القرآن الكريم</title>
+
+    <meta name="description"
+          content="اقرأ سورة كاملة بالرسم العثماني مع الترجمة الإنجليزية والاستماع للتلاوة بصوت الشيخ مشاري العفاسي.">
+
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#234d3b">
+
+    <link rel="canonical" href="https://YOUR-DOMAIN.com/surah.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="القرآن الكريم">
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:title" content="قراءة السورة - القرآن الكريم">
+    <meta property="og:description"
+          content="اقرأ السورة كاملة مع الترجمة والاستماع للتلاوة.">
+    <meta property="og:image" content="https://YOUR-DOMAIN.com/og-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                القرآن الكريم
+            </a>
+
+            <nav id="main-nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="index.html#surahs">السور</a>
+                <a href="index.html#search">🔎 البحث</a>
+                <a href="bookmarks.html">🔖 المحفوظات</a>
+                <a href="index.html#about">حول الموقع</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <button
+                    id="theme-toggle"
+                    onclick="toggleTheme()"
+                    aria-label="تغيير المظهر"
+                >
+                    🌙
+                </button>
+
+                <button
+                    id="menu-button"
+                    onclick="toggleMenu()"
+                    aria-label="فتح القائمة"
+                >
+                    ☰
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section id="surah-page">
+
+            <div class="surah-info">
+
+                <h1 id="surah-title">
+                    جاري تحميل السورة...
+                </h1>
+
+                <div class="surah-details" id="surah-details">
+                    جاري تحميل معلومات السورة...
+                </div>
+
+            </div>
+
+            <div class="surah-listen">
+                <button onclick="listenToSurah()">
+                    🎧 استماع إلى السورة
+                </button>
+            </div>
+
+            <div class="surah-navigation">
+
+                <button id="previous-surah" onclick="goToPreviousSurah()">
+                    ← السورة السابقة
+                </button>
+
+                <button id="next-surah" onclick="goToNextSurah()">
+                    السورة التالية →
+                </button>
+
+            </div>
+
+            <div class="reading-progress-container">
+                <div id="reading-progress"></div>
+            </div>
+
+            <div id="ayah-list"></div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>القرآن الكريم</p>
+    </footer>
+
+
+    <!-- MINI AUDIO PLAYER -->
+
+    <div id="audio-player" class="audio-player">
+
+        <div class="audio-info">
+
+            <div id="audio-title">
+                لم يتم تشغيل أي آية
+            </div>
+
+            <div id="audio-status">
+                القرآن الكريم
+            </div>
+
+        </div>
+
+        <div class="audio-controls">
+
+            <button
+                id="audio-prev"
+                onclick="playPreviousFromPlayer()"
+                aria-label="الآية السابقة"
+            >
+                ⏮️
+            </button>
+
+            <button
+                id="audio-main-button"
+                onclick="toggleMainAudio()"
+                aria-label="تشغيل وإيقاف"
+            >
+                ▶️
+            </button>
+
+            <button
+                id="audio-next"
+                onclick="playNextFromPlayer()"
+                aria-label="الآية التالية"
+            >
+                ⏭️
+            </button>
+
+        </div>
+
+        <div class="audio-progress-container">
+
+            <span id="audio-current-time">0:00</span>
+
+            <input
+                type="range"
+                id="audio-progress"
+                min="0"
+                max="100"
+                value="0"
+            >
+
+            <span id="audio-duration">0:00</span>
+
+        </div>
+
+        <div class="audio-volume-container">
+
+            <span>🔊</span>
+
+            <input
+                type="range"
+                id="audio-volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+                aria-label="مستوى الصوت"
+            >
+
+        </div>
+
+        <button
+            id="audio-close"
+            onclick="closeAudioPlayer()"
+            aria-label="إغلاق المشغل"
+        >
+            ✕
+        </button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

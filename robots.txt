@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /bookmarks.html
+
+Sitemap: https://read-quran-kareem.netlify.app/sitemap.xml

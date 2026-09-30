@@ -1,0 +1,1999 @@
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
+   * {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0 0 90px;  /* room for the fixed audio player */
+
+    font-family: "Noto Naskh Arabic", "Amiri", serif;
+
+    background: #f7f8f6;
+    color: #24352d;
+
+    line-height: 1.8;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #e4e8e5;
+}
+
+.header-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    min-height: 70px;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* LOGO */
+
+.logo {
+    color: #234d3b;
+
+    text-decoration: none;
+
+    font-size: 25px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+}
+
+nav a {
+    color: #40534a;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: 0.2s ease;
+}
+
+nav a:hover {
+    color: #234d3b;
+}
+
+
+/* HEADER BUTTONS */
+
+.header-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.header-actions button {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #edf3ef;
+
+    color: #234d3b;
+
+    font-size: 18px;
+
+    transition: 0.2s ease;
+}
+
+.header-actions button:hover {
+    transform: scale(1.06);
+
+    background: #dceae3;
+}
+
+#menu-button {
+    display: none;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+    width: 100%;
+}
+
+section {
+    max-width: 1100px;
+
+    margin: 40px auto;
+
+    padding: 30px 20px;
+}
+
+.page-title {
+    text-align: center;
+    color: #234d3b;
+    font-size: clamp(24px, 4vw, 34px);
+    margin: 0 0 20px;
+}
+
+body.dark-mode .page-title {
+    color: #f0d477;
+}
+
+
+/* =========================================================
+   HERO / HOME
+   ========================================================= */
+
+.hero {
+    text-align: center;
+
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.hero-title {
+    margin: 0 0 6px;
+
+    color: #234d3b;
+
+    font-size: clamp(26px, 4vw, 40px);
+}
+
+.hero-basmala {
+    margin: 0 0 12px;
+
+    font-family: "Amiri", serif;
+
+    font-size: clamp(28px, 6vw, 52px);
+
+    line-height: 1.6;
+
+    color: #234d3b;
+}
+
+.hero-subtitle {
+    color: #68756e;
+
+    font-size: 18px;
+
+    margin: 8px 0 20px;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+body.dark-mode .hero-title,
+body.dark-mode .hero-basmala {
+    color: #f0d477;
+}
+
+body.dark-mode .hero-subtitle {
+    color: #b8c2bc;
+}
+
+
+/* =========================================================
+   INTRO (SEO CONTENT)
+   ========================================================= */
+
+.intro {
+    max-width: 850px;
+    margin: 20px auto 40px;
+    padding: 0 20px;
+    color: #40534a;
+}
+
+.intro h2 {
+    color: #234d3b;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 17px;
+    line-height: 2;
+    margin-bottom: 14px;
+}
+
+body.dark-mode .intro {
+    color: #cfd8d3;
+}
+
+body.dark-mode .intro h2 {
+    color: #f0d477;
+}
+
+
+/* =========================================================
+   GENERAL BUTTON
+   ========================================================= */
+
+button {
+    border: none;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   START READING
+   ========================================================= */
+
+.start-reading {
+    display: inline-block;
+
+    padding: 11px 25px;
+
+    border-radius: 25px;
+
+    background: #234d3b;
+
+    color: white;
+
+    font-size: 17px;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.start-reading:hover {
+    background: #2f624d;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CONTINUE READING
+   ========================================================= */
+
+.continue-reading-btn,
+.hero button {
+    padding: 12px 22px;
+
+    font-size: 16px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.continue-reading-btn {
+    background: #f0d477;
+
+    color: #111;
+
+    border: none;
+}
+
+.continue-reading-btn:hover {
+    background: #e6c65c;
+}
+
+
+/* =========================================================
+   SURAH LIST
+   ========================================================= */
+
+#surahs {
+    scroll-margin-top: 90px;
+}
+
+#surah-list {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 14px;
+}
+
+a.surah {
+    text-decoration: none;
+    color: inherit;
+}
+
+.surah {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 16px;
+
+    background: white;
+
+    border: 1px solid #e3e9e5;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.surah:hover {
+    transform: translateY(-3px);
+
+    border-color: #cbdcd3;
+
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.07);
+}
+
+.surah-number {
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #edf3ef;
+
+    color: #234d3b;
+
+    font-weight: 700;
+}
+
+.surah-name {
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+#search {
+    scroll-margin-top: 90px;
+}
+
+.search-box {
+    display: flex;
+
+    gap: 10px;
+
+    max-width: 700px;
+
+    margin: 0 auto 25px;
+}
+
+.search-input-wrapper {
+    position: relative;
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+#search-input {
+    width: 100%;
+
+    padding: 13px 17px;
+
+    /* room for the ✕ button (which sits on the left in RTL) */
+    padding-left: 46px;
+
+    border: 1px solid #d9e1dc;
+
+    border-radius: 14px;
+
+    outline: none;
+
+    background: white;
+
+    color: #24352d;
+
+    font-size: 17px;
+
+    transition: 0.2s ease;
+}
+
+#search-input:focus {
+    border-color: #8eae9d;
+
+    box-shadow: 0 0 0 3px rgba(35, 77, 59, 0.08);
+}
+
+
+/* CLEAR SEARCH BUTTON (✕ inside the input) */
+
+#clear-search {
+    position: absolute;
+
+    top: 50%;
+
+    left: 10px;
+
+    transform: translateY(-50%);
+
+    width: 28px;
+
+    height: 28px;
+
+    padding: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #eef1ef;
+
+    color: #666;
+
+    font-size: 13px;
+
+    line-height: 1;
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
+}
+
+#clear-search:hover {
+    background: #dfe5e1;
+}
+
+#clear-search.visible {
+    display: flex;
+}
+
+body.dark-mode #clear-search {
+    background: #2c2c2c;
+
+    color: #ccc;
+}
+
+body.dark-mode #clear-search:hover {
+    background: #3a3a3a;
+}
+
+
+.search-button {
+    padding: 10px 18px;
+
+    border-radius: 13px;
+
+    font-size: 16px;
+
+    background: #234d3b;
+
+    color: white;
+}
+
+
+/* =========================================================
+   SEARCH RESULTS
+   ========================================================= */
+
+#search-results {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.search-count {
+    text-align: center;
+
+    color: #68756e;
+}
+
+.search-result {
+    position: relative;
+
+    margin-bottom: 15px;
+
+    padding: 18px;
+
+    background: white;
+
+    border: 1px solid #e2e8e4;
+
+    border-radius: 15px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.search-result-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 8px;
+
+    color: #234d3b;
+}
+
+.search-ayah {
+    font-family: "Amiri", serif;
+
+    font-size: 21px;
+
+    line-height: 2;
+
+    margin: 8px 0;
+}
+
+.search-ayah mark {
+    background: #f3df83;
+
+    color: inherit;
+
+    border-radius: 4px;
+
+    padding: 0 3px;
+}
+
+
+/* =========================================================
+   SURAH PAGE
+   ========================================================= */
+
+#surah-page {
+    max-width: 1000px;
+
+    margin: 30px auto;
+
+    padding: 20px;
+}
+
+.surah-info {
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+#surah-title {
+    margin: 0;
+
+    color: #234d3b;
+
+    font-size: clamp(30px, 6vw, 48px);
+
+    line-height: 1.3;
+
+    letter-spacing: 0;
+
+    text-shadow: 0 2px 8px rgba(35, 77, 59, 0.08);
+}
+
+body.dark-mode #surah-title {
+    color: #dfe9e3;
+
+    text-shadow: 0 2px 8px rgba(212, 175, 55, 0.08);
+}
+
+.surah-details {
+    color: #737e78;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-top: 8px;
+}
+
+body.dark-mode .surah-details {
+    color: #aebbb4;
+}
+
+
+/* =========================================================
+   LISTEN BUTTON
+   ========================================================= */
+
+.surah-listen {
+    display: flex;
+
+    justify-content: center;
+
+    margin: 20px 0;
+}
+
+.surah-listen button {
+    padding: 10px 22px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #234d3b;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.surah-listen button:hover {
+    background: #315f4c;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 12px rgba(35, 77, 59, 0.2);
+}
+
+body.dark-mode .surah-listen button {
+    background: #315f4c;
+    color: #fff;
+}
+
+body.dark-mode .surah-listen button:hover {
+    background: #3d755e;
+}
+
+
+/* =========================================================
+   SURAH NAVIGATION
+   ========================================================= */
+
+.surah-navigation {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin: 25px 0;
+}
+
+.surah-navigation button {
+    padding: 9px 17px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #edf3ef;
+
+    color: #234d3b;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.surah-navigation button:hover {
+    background: #315f4c;
+
+    color: #fff;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 4px 10px rgba(49, 95, 76, 0.18);
+}
+
+body.dark-mode .surah-navigation button {
+    background: #26332d;
+
+    color: #dfe9e3;
+}
+
+body.dark-mode .surah-navigation button:hover {
+    background: #315f4c;
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   READING PROGRESS
+   ========================================================= */
+
+.reading-progress-container {
+    position: sticky;
+
+    top: 70px;
+
+    z-index: 100;
+
+    width: 100%;
+
+    height: 5px;
+
+    background: #e5eae7;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+#reading-progress {
+    width: 0;
+
+    height: 100%;
+
+    background: #d4af37;
+
+    transition: width 0.15s linear;
+}
+
+body.dark-mode .reading-progress-container {
+    background: #26332d;
+}
+
+
+/* =========================================================
+   AYAH
+   ========================================================= */
+
+.ayah {
+    position: relative;
+
+    margin-bottom: 20px;
+
+    padding: 22px;
+
+    background: white;
+
+    border: 1px solid #e3e9e5;
+
+    border-radius: 18px;
+
+    scroll-margin-top: 100px;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease,
+        border 0.3s ease;
+}
+
+.ayah:hover {
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+}
+
+
+.ayah-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 8px;
+}
+
+.ayah-number {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #edf3ef;
+
+    color: #315f4c;
+
+    font-weight: 700;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   AYAH BUTTONS
+   ========================================================= */
+
+.play-button,
+.bookmark-button,
+.copy-button {
+    width: 34px;
+    height: 34px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #315f4c;
+
+    font-size: 17px;
+
+    border: none;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.play-button:hover,
+.bookmark-button:hover,
+.copy-button:hover {
+    background: #edf3ef;
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   SAVED BOOKMARK BUTTON
+   ========================================================= */
+
+.bookmark-button.saved {
+    background: #d4af37;
+
+    color: #111;
+
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.25);
+}
+
+.bookmark-button.saved:hover {
+    background: #e6c65c;
+
+    color: #111;
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   AYAH TEXT
+   ========================================================= */
+
+.ayah-text {
+    margin: 8px 0 14px;
+
+    font-family: "Amiri", "Noto Naskh Arabic", serif;
+
+    font-size: clamp(23px, 3vw, 31px);
+
+    line-height: 2.2;
+
+    text-align: right;
+}
+
+.translation {
+    margin: 0;
+
+    color: #727c76;
+
+    font-family: Arial, sans-serif;
+
+    direction: ltr;
+
+    text-align: left;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BOOKMARKS PAGE
+   ========================================================= */
+
+#bookmarks-list {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.empty-bookmarks {
+    text-align: center;
+
+    margin: 40px auto;
+
+    padding: 30px 20px;
+
+    max-width: 600px;
+
+    color: #777;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    border: 1px solid rgba(49, 95, 76, 0.12);
+
+    border-radius: 14px;
+}
+
+body.dark-mode .empty-bookmarks {
+    color: #bbb;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   BOOKMARKS COUNT
+   ========================================================= */
+
+.bookmarks-count {
+    text-align: center;
+
+    margin: -10px 0 25px;
+
+    color: #777;
+
+    font-size: 15px;
+}
+
+body.dark-mode .bookmarks-count {
+    color: #bbb;
+}
+
+
+/* =========================================================
+   CLEAR ALL BOOKMARKS
+   ========================================================= */
+
+.clear-bookmarks-btn {
+    display: block;
+
+    margin: 0 auto 25px;
+
+    padding: 10px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #333;
+
+    color: #fff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.clear-bookmarks-btn:hover {
+    background: #444;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   READING POSITION
+   ========================================================= */
+
+.reading-position {
+    border: 2px solid #d4af37 !important;
+
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+
+    transform: translateY(-2px);
+}
+
+.reading-position.playing {
+    border-color: #d4af37 !important;
+
+    box-shadow: 0 0 22px rgba(212, 175, 55, 0.35);
+}
+
+
+/* =========================================================
+   PLAYING AYAH
+   ========================================================= */
+
+.ayah.playing {
+    border: 2px solid #d4af37;
+
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.25);
+
+    transform: translateY(-2px);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   MINI AUDIO PLAYER
+   ========================================================= */
+
+.audio-player {
+    position: fixed;
+
+    bottom: 18px;
+
+    left: 50%;
+
+    transform: translateX(-50%) translateY(120px);
+
+    width: min(850px, calc(100% - 30px));
+
+    min-height: 70px;
+
+    padding: 8px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(35, 77, 59, 0.14);
+
+    border-radius: 40px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.13);
+
+    z-index: 9999;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+    direction: rtl;
+}
+
+.audio-player.show {
+    transform: translateX(-50%) translateY(0);
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* AUDIO INFO */
+
+.audio-info {
+    min-width: 130px;
+
+    max-width: 190px;
+
+    text-align: right;
+
+    flex-shrink: 0;
+}
+
+#audio-title {
+    font-family: "Noto Naskh Arabic", "Amiri", serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #234d3b;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+#audio-status {
+    margin-top: 0;
+
+    font-size: 11px;
+
+    color: #7a837e;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   AUDIO CONTROLS
+   ========================================================= */
+
+.audio-controls {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    flex-shrink: 0;
+
+    margin: 0;
+}
+
+.audio-controls button {
+    width: 34px;
+
+    height: 34px;
+
+    padding: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #edf3ef;
+
+    color: #234d3b;
+
+    font-size: 15px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.audio-controls button:hover {
+    transform: scale(1.08);
+
+    background: #dceae3;
+}
+
+
+/* MAIN PLAY */
+
+#audio-main-button {
+    width: 43px;
+
+    height: 43px;
+
+    background: #234d3b;
+
+    color: white;
+
+    font-size: 17px;
+
+    box-shadow: 0 4px 12px rgba(35, 77, 59, 0.22);
+}
+
+#audio-main-button:hover {
+    background: #2e604b;
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   AUDIO PROGRESS
+   ========================================================= */
+
+.audio-progress-container {
+    flex: 1;
+
+    min-width: 130px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 10px;
+
+    color: #777;
+}
+
+#audio-progress {
+    flex: 1;
+
+    min-width: 70px;
+
+    height: 4px;
+
+    margin: 0;
+
+    cursor: pointer;
+
+    accent-color: #315f4c;
+}
+
+
+/* =========================================================
+   AUDIO VOLUME
+   ========================================================= */
+
+.audio-volume-container {
+    width: 105px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    flex-shrink: 0;
+
+    margin: 0;
+
+    color: #315f4c;
+}
+
+#audio-volume {
+    width: 75px;
+
+    height: 4px;
+
+    cursor: pointer;
+
+    accent-color: #315f4c;
+}
+
+
+/* =========================================================
+   CLOSE PLAYER
+   ========================================================= */
+
+#audio-close {
+    width: 27px;
+
+    height: 27px;
+
+    padding: 0;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #888;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+#audio-close:hover {
+    background: #edf0ee;
+
+    color: #333;
+}
+
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+.toast {
+    position: fixed;
+
+    bottom: 100px;
+
+    left: 50%;
+
+    transform: translateX(-50%) translateY(20px);
+
+    padding: 10px 22px;
+
+    border-radius: 30px;
+
+    background: #234d3b;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    font-family: inherit;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 10000;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.toast.show {
+    opacity: 1;
+
+    transform: translateX(-50%) translateY(0);
+}
+
+body.dark-mode .toast {
+    background: #f0d477;
+
+    color: #111;
+}
+
+
+/* =========================================================
+   SAVED AYAH ACTION BUTTONS (search results & bookmarks)
+   ========================================================= */
+
+.search-result-actions {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 18px;
+
+    flex-wrap: wrap;
+}
+
+.search-result-actions button {
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 9px 14px;
+
+    min-height: 40px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.search-result-actions .search-play-btn {
+    width: 44px;
+
+    padding: 9px;
+
+    background: #d4af37;
+
+    color: #111;
+}
+
+.search-result-actions .search-play-btn:hover {
+    background: #e6c65c;
+
+    transform: translateY(-2px);
+}
+
+.search-result-actions .open-ayah-btn {
+    background: #d4af37;
+
+    color: #111;
+}
+
+.search-result-actions .open-ayah-btn:hover {
+    background: #e6c65c;
+
+    transform: translateY(-2px);
+}
+
+.search-result-actions .delete-bookmark-btn {
+    background: #333;
+
+    color: #fff;
+}
+
+.search-result-actions .delete-bookmark-btn:hover {
+    background: #444;
+
+    transform: translateY(-2px);
+}
+
+.search-result-actions .search-play-btn.playing {
+    background: #315f4c;
+
+    color: #fff;
+
+    transform: scale(1.05);
+}
+
+.search-result-actions .search-play-btn.playing:hover {
+    background: #264b3c;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+body.dark-mode {
+    background: #121212;
+
+    color: #f1f1f1;
+}
+
+body.dark-mode header {
+    background: rgba(18, 18, 18, 0.96);
+
+    border-color: #2a2a2a;
+}
+
+body.dark-mode .logo {
+    color: #f0d477;
+}
+
+body.dark-mode nav a {
+    color: #cccccc;
+}
+
+body.dark-mode nav a:hover {
+    color: #ffffff;
+}
+
+body.dark-mode .header-actions button {
+    background: #242424;
+
+    color: #f0d477;
+}
+
+
+/* DARK CARDS */
+
+body.dark-mode .surah,
+body.dark-mode .ayah,
+body.dark-mode .search-result {
+    background: #1e1e1e;
+
+    border-color: #303030;
+
+    color: #eeeeee;
+}
+
+body.dark-mode .surah-number,
+body.dark-mode .ayah-number {
+    background: #292929;
+
+    color: #f0d477;
+}
+
+body.dark-mode .search-ayah {
+    color: #eeeeee;
+}
+
+body.dark-mode .translation,
+body.dark-mode .surah-details {
+    color: #aaaaaa;
+}
+
+
+/* DARK SEARCH */
+
+body.dark-mode #search-input {
+    background: #1e1e1e;
+
+    border-color: #333333;
+
+    color: #ffffff;
+}
+
+body.dark-mode .search-button {
+    background: #315f4c;
+}
+
+body.dark-mode .surah-navigation button {
+    background: #292929;
+
+    color: #f0d477;
+}
+
+body.dark-mode .open-ayah-btn {
+    background: #d4af37;
+
+    color: #111;
+}
+
+
+/* DARK PLAYING AYAH */
+
+body.dark-mode .ayah.playing {
+    border-color: #d4af37;
+}
+
+
+/* DARK BUTTON HOVER */
+
+body.dark-mode .copy-button:hover,
+body.dark-mode .play-button:hover,
+body.dark-mode .bookmark-button:hover {
+    background: #292929;
+}
+
+
+/* DARK SAVED BOOKMARK */
+
+body.dark-mode .bookmark-button.saved {
+    background: #d4af37;
+
+    color: #111;
+
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+}
+
+body.dark-mode .bookmark-button.saved:hover {
+    background: #e6c65c;
+
+    color: #111;
+}
+
+
+/* DARK READING POSITION */
+
+body.dark-mode .reading-position {
+    border-color: #d4af37 !important;
+
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+
+/* DARK AUDIO PLAYER */
+
+body.dark-mode .audio-player {
+    background: rgba(25, 25, 25, 0.98);
+
+    border-color: #333333;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode #audio-title {
+    color: #f0d477;
+}
+
+body.dark-mode #audio-status,
+body.dark-mode .audio-progress-container {
+    color: #999999;
+}
+
+body.dark-mode .audio-controls button {
+    background: #292929;
+
+    color: #eeeeee;
+}
+
+body.dark-mode .audio-controls button:hover {
+    background: #3a3a3a;
+}
+
+body.dark-mode #audio-main-button {
+    background: #f0d477;
+
+    color: #181818;
+}
+
+body.dark-mode #audio-close {
+    color: #999999;
+}
+
+body.dark-mode #audio-close:hover {
+    background: #333333;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    text-align: center;
+
+    padding: 30px 20px;
+
+    margin-top: 50px;
+
+    color: #7a857f;
+
+    border-top: 1px solid #e2e7e4;
+}
+
+body.dark-mode footer {
+    border-color: #29342f;
+
+    color: #89958e;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    body {
+        padding-bottom: 80px;
+    }
+
+    .header-container {
+        min-height: 62px;
+
+        padding: 0 14px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    #menu-button {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+    }
+
+    nav {
+        position: absolute;
+
+        top: 62px;
+
+        right: 10px;
+
+        left: 10px;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 8px;
+
+        background: white;
+
+        border: 1px solid #e1e7e3;
+
+        border-radius: 14px;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav a {
+        padding: 10px 14px;
+
+        border-radius: 10px;
+    }
+
+    nav a:hover {
+        background: #edf3ef;
+    }
+
+    body.dark-mode nav {
+        background: #1b2420;
+
+        border-color: #303c36;
+    }
+
+    body.dark-mode nav a:hover {
+        background: #293a33;
+    }
+
+
+    /* SEARCH */
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-button {
+        width: 100%;
+    }
+
+
+    /* SURAH NAVIGATION */
+
+    .surah-navigation {
+        flex-direction: column;
+    }
+
+    .surah-navigation button {
+        width: 100%;
+    }
+
+
+    /* AUDIO */
+
+    .audio-player {
+        width: calc(100% - 16px);
+
+        min-height: 62px;
+
+        bottom: 8px;
+
+        padding: 7px 13px;
+
+        gap: 8px;
+
+        border-radius: 32px;
+    }
+
+    .audio-info {
+        min-width: 85px;
+
+        max-width: 105px;
+    }
+
+    #audio-title {
+        font-size: 13px;
+    }
+
+    #audio-status {
+        font-size: 9px;
+    }
+
+    .audio-controls {
+        gap: 4px;
+    }
+
+    .audio-controls button {
+        width: 30px;
+
+        height: 30px;
+
+        font-size: 13px;
+    }
+
+    #audio-main-button {
+        width: 38px;
+
+        height: 38px;
+
+        font-size: 15px;
+    }
+
+    .audio-progress-container {
+        min-width: 70px;
+
+        gap: 4px;
+
+        font-size: 9px;
+    }
+
+    #audio-progress {
+        min-width: 40px;
+    }
+
+    .audio-volume-container {
+        width: 55px;
+
+        gap: 3px;
+    }
+
+    #audio-volume {
+        width: 40px;
+    }
+
+    #audio-close {
+        width: 23px;
+
+        height: 23px;
+
+        font-size: 12px;
+    }
+
+    .toast {
+        bottom: 85px;
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .audio-player {
+        gap: 5px;
+
+        padding: 6px 9px;
+    }
+
+    .audio-info {
+        min-width: 65px;
+
+        max-width: 80px;
+    }
+
+    #audio-title {
+        font-size: 11px;
+    }
+
+    #audio-status {
+        display: none;
+    }
+
+    .audio-controls button {
+        width: 27px;
+
+        height: 27px;
+
+        font-size: 11px;
+    }
+
+    #audio-main-button {
+        width: 35px;
+
+        height: 35px;
+
+        font-size: 13px;
+    }
+
+    .audio-progress-container {
+        min-width: 55px;
+    }
+
+    .audio-volume-container {
+        width: 42px;
+    }
+
+    #audio-volume {
+        width: 28px;
+    }
+
+    .search-result-actions {
+        gap: 6px;
+    }
+
+    .search-result-actions button {
+        padding: 8px 11px;
+
+        font-size: 13px;
+    }
+
+    .search-result-actions .search-play-btn {
+        width: 40px;
+    }
+
+}
